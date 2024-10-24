@@ -11,6 +11,14 @@
     font-family: 'Dancing Script';
     font-size: 40px;
 }
-.pedidos {
-    
+.subpaginacarrinho {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid#ccc;
+    padding: 8px;
+    text-align: left;
+}
+.totalCarrinho{
+    font-weight: bold;
 }
