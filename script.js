@@ -1,7 +1,7 @@
 //Exemplo de itens no carrinho
 const itens = [
-    {nome:"Produto A", quantidade:2, preco:30.00};
-    {nome:"Produto B", quantidade:1, preco:50.00};
+    {nome:"Produto A", quantidade:2, preco:30.00},
+    {nome:"Produto B", quantidade:1, preco:50.00},
 ];
 function atualizarCarrinho() {
     const body = document.getElementById('itensCarrinho');
