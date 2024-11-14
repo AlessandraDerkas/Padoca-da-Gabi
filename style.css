@@ -103,3 +103,18 @@ main {
     align-items: center;
     color: #333;
 }
+#cart-total {
+    margin: 20px 0;
+    font-size: 20px;
+}
+#checkout-btn {
+    background-color: #4cAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#checkout-btn:hover {
+    background-color: #45a049;
+}
