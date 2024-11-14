@@ -20,10 +20,10 @@ header {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #ff38a5;
+    background-color: #f16eb6;
 }
 .logo img {
-    height: 60px;
+    height: 100px;
 }
 .slideshow {
     flex: 1;
