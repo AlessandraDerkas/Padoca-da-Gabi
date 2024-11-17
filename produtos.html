@@ -6,35 +6,40 @@
     <title>Nossos Produtos</title>
 </head>
 <body>
-    <!--Seção de Produtos-->
-   <main>
-    <h1>Nossos Produtos</h1>
-    <div class="products">
-    <div class="product">
-      <img src="0001-1510278989407667264 1.png" alt="Pão Francês">
-    <h2>Pão Francês</h2>
-    <p>R$12,90 Kg</p>
-    <div class="quantity">
-        <button class="minus">-</button>
-        <span class="qty">1</span>
-        <button class="plus">+</button>
+  <div class="container">
+    <h1>Padaria Online</h1>
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('products')">Produtos</div>
+      <div class="tab" onclick="switchTab('cart')">Carrinho</div>
     </div>
-    <button class="add-to-cart">Adicionar ao Carrinho</button>
-    </div>
-    <!--mais produtos-->
-    <div class="product">
-        <img src="0014-3352251236777572906 14.png" alt="Bolo de Chocolate">
-      <h2>Bolo de Chocolate</h2>
-      <p>R$10,00 pdç</p>
-      <div class="quantity">
-          <button class="minus">-</button>
-          <span class="qty">1</span>
-          <button class="plus">+</button>
+    <div id="products" class="tab-content active">
+      <div class="items">
+        <div class="item">
+          <img src="0001-1510278989407667264 1.png" alt="Pão Francês">
+          <div class="item-details">
+            <h3>Pão Francês</h3>
+            <p>R$ 1,00</p>
+          </div>
+          <button onclick="addToCart('Pão Francês', 1.00)">Adicionar</button>
+        </div>
+        <div class="item">
+          <img src="0006-1510278989407667264 6.png" alt="Croissant">
+          <div class="item-details">
+            <h3>Croissant</h3>
+            <p>R$ 5,00</p>
+          </div>
+          <button onclick="addToCart('Croissant', 5.00)">Adicionar</button>
+        </div>
       </div>
-      <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-      <!--adicionar produtos abaixo-->
     </div>
-   </main>
+    <div id="cart" class="tab-content">
+      <div class="cart">
+        <h2>Carrinho</h2>
+        <div id="cart-items"></div>
+        <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

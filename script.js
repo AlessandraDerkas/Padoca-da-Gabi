@@ -1,12 +1,23 @@
 let cart = [];
 let total = 0;
 
+// Alterna entre abas
+function switchTab(tabId) {
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  // Remove a classe 'active' de todas as abas e conteúdos
+  tabs.forEach(tab => tab.classList.remove('active'));
+  contents.forEach(content => content.classList.remove('active'));
+
+  // Ativa a aba e o conteúdo correspondente
+  document.querySelector(`.tab[onclick="switchTab('${tabId}')"]`).classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
 function addToCart(name, price) {
-  // Adiciona o item ao array do carrinho
   cart.push({ name, price });
-  // Atualiza o total
   total += price;
-  // Atualiza a interface
   updateCart();
 }
 
@@ -14,10 +25,8 @@ function updateCart() {
   const cartItems = document.getElementById('cart-items');
   const totalElement = document.getElementById('total');
 
-  // Limpa a exibição anterior
   cartItems.innerHTML = '';
 
-  // Recria a lista de itens no carrinho
   cart.forEach((item, index) => {
     const cartItem = document.createElement('div');
     cartItem.className = 'cart-item';
@@ -28,14 +37,11 @@ function updateCart() {
     cartItems.appendChild(cartItem);
   });
 
-  // Atualiza o total
   totalElement.textContent = total.toFixed(2);
 }
 
 function removeFromCart(index) {
-  // Remove o item do carrinho
   total -= cart[index].price;
   cart.splice(index, 1);
-  // Atualiza a interface
   updateCart();
 }
