@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padoca da Gabi</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+  <header>
+    <h1>Padoca da Gabi</h1>
+    <nav>
+      <a href="produtos.html">Catálogo</a>
+      <a href="carrinho.html">Carrinho</a>
+    </nav>
+  </header>
   <!-- Cabeçalho -->
    <header>
     <div class="logo">
@@ -25,13 +31,10 @@
         <p class="subtitle">O melhor é sempre aqui!</p>
       </div>
         </div>
-        <input type="text" id="search" placeholder="Pesquisar produtos...">
-        <button id="cart-btn">Pesquisar</button>
-        <nav>
-          <button onclick="navigate('home')">Início</button>
-        </nav>
-   </header>
-   <script src="script.js"></script>
+        <section class="description">
+          <p>Bem-vindo à Padoca da Gabi! Aqui, você encontra os melhores doces e salgados feitos com carinho. Explore nosso catálogo e faça seu pedido!</p>
+          <input type="text" id="search" placeholder="Busque por produtos..." oninput="searchProducts()">
+        </section>
+      </main>
 </body>
-
 </html>

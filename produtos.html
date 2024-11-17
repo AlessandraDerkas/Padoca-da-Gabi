@@ -3,41 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossos Produtos</title>
+    <title>Catálogo de Produtos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <nav>
-  <button onclick="navigate('catalog')">Catálogo</button>
- </nav>
-  <!--Seção de Produtos-->
-  <main>
-    <h1>Nossos Produtos</h1>
+    <header>
+        <h1>Padoca da Gabi</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="carrinho.html">Carrinho</a>
+        </nav>
+    </header>
+    <!-- Seção de Catálogo -->
+<main>
+    <h2>Catálogo de Produtos</h2>
     <div class="products">
-    <div class="product">
-      <img src="0001-1510278989407667264 1.png" alt="Pão Francês">
-    <h2>Pão Francês</h2>
-    <p>R$12,90 Kg</p>
-    <div class="quantity">
-        <button class="minus">-</button>
-        <span class="qty">1</span>
-        <button class="plus">+</button>
-    </div>
-    <button class="add-to-cart">Adicionar ao Carrinho</button>
-    </div>
-    <!--mais produtos-->
-    <div class="product">
-        <img src="0014-3352251236777572906 14.png" alt="Bolo de Chocolate">
-      <h2>Bolo de Chocolate</h2>
-      <p>R$10,00 pdç</p>
-      <div class="quantity">
-          <button class="minus">-</button>
-          <span class="qty">1</span>
-          <button class="plus">+</button>
+      <div class="product" data-name="Pão Francês" data-category="salgados">
+        <img src="0001-1510278989407667264 1.png" alt="Pão Francês">
+        <h3>Pão Francês</h3>
+        <p>R$ 1,00</p>
+        <button onclick="addToCart('Pão Francês', 1.00)">Adicionar</button>
       </div>
-      <button class="add-to-cart">Adicionar ao Carrinho</button>
+      <div class="product" data-name="Croissant" data-category="salgados">
+        <img src="0006-1510278989407667264 6.png" alt="Croissant">
+        <h3>Croissant</h3>
+        <p>R$ 5,00</p>
+        <button onclick="addToCart('Croissant', 5.00)">Adicionar</button>
       </div>
-      <!--adicionar produtos abaixo-->
+      <div class="product" data-name="Bolo de chocolate" data-category="doces">
+        <img src="0014-3352251236777572906 14.png" alt="Bolo de chocolate">
+        <h3>Bolo de chocolate</h3>
+        <p>R$ 10,00</p>
+        <button onclick="addToCart('Bolo de chocolate', 10.00)">Adicionar</button>
+      </div>
+      <div class="product" data-name="Coxinha" data-category="salgados">
+        <img src="0001-1510278989407667264 1.png" alt="Coxinha">
+        <h3>Coxinha</h3>
+        <p>R$ 8,00</p>
+        <button onclick="addToCart('Coxinha', 8.00)">Adicionar</button>
+      </div>
     </div>
-   </main>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

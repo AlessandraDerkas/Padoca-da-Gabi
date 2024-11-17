@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho de Compras</title>
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <button onclick="navigate('cart')">Carrinho</button>
-    </nav>
-    
-    <div id="cart-modal" class="cart-modal">
-        <h1>Carrinho de Compras</h1>
+    <header>
+        <h1>Padoca da Gabi</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Catálogo</a>
+        </nav>
+    </header>
+
+    <!-- Seção do Carrinho -->
+<main>
+    <h2>Seu Carrinho</h2>
     <div id="cart-items"></div>
-    <div id="cart-total">
-        <p>Total: R$ <span id="total-amount">0.00</span></p>
-    </div>
-    <button id="checkout-btn">Finalizar Compras</button>
-    <button id="close-cart">Fechar</button>
-    </div>
+    <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
+    <button onclick="clearCart()">Limpar Carrinho</button>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
