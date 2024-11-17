@@ -4,11 +4,11 @@
 }
 .overplay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
     text-align: center;
-    color: #4b2e2e;
+    color: #c995ce;
 }
 .title {
     font-weight: bold;
@@ -29,9 +29,6 @@ header {
     align-items: center;
     padding: 10px;
     background-color: #f16eb6;
-}
-.logo img {
-    height: 200px;
 }
 .slideshow {
     flex: 1;
