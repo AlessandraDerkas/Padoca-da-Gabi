@@ -1,47 +1,81 @@
-let cart = [];
-let total = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    const cart = [];
+    const cartModal =
+    document.getElementById("cart-modal");
+    const cartBtn = document.getElementById("cart-btn");
+    const closeCartBtn = document.getElementById("close-cart");
+    const cartItemsContainer = document.getElementById("cart-items");
+    const totalAmountElement = document.getElementById("total-amount");
+    const checkoutBtn = document.getElementById("checkout-btn");
 
-// Alterna entre abas
-function switchTab(tabId) {
-  const tabs = document.querySelectorAll('.tab');
-  const contents = document.querySelectorAll('.tab-content');
-
-  // Remove a classe 'active' de todas as abas e conteúdos
-  tabs.forEach(tab => tab.classList.remove('active'));
-  contents.forEach(content => content.classList.remove('active'));
-
-  // Ativa a aba e o conteúdo correspondente
-  document.querySelector(`.tab[onclick="switchTab('${tabId}')"]`).classList.add('active');
-  document.getElementById(tabId).classList.add('active');
-}
-
-function addToCart(name, price) {
-  cart.push({ name, price });
-  total += price;
-  updateCart();
-}
-
-function updateCart() {
-  const cartItems = document.getElementById('cart-items');
-  const totalElement = document.getElementById('total');
-
-  cartItems.innerHTML = '';
-
-  cart.forEach((item, index) => {
-    const cartItem = document.createElement('div');
-    cartItem.className = 'cart-item';
-    cartItem.innerHTML = `
-      <span>${item.name} - R$ ${item.price.toFixed(2)}</span>
-      <button onclick="removeFromCart(${index})">Remover</button>
-    `;
-    cartItems.appendChild(cartItem);
-  });
-
-  totalElement.textContent = total.toFixed(2);
-}
-
-function removeFromCart(index) {
-  total -= cart[index].price;
-  cart.splice(index, 1);
-  updateCart();
-}
+    cartBtn.addEventListener("click", () => {
+        cartModal.style.display = "flex";
+        renderCart();
+    });
+    closeCartBtn.addEventListener("click", () => {
+        cartModal.style.display = "none";
+    });
+    document.querySelectorAll(".add-to-cart").forEach((btn,index) => {
+        btn.addEventListener("click", () => {
+            const product = {
+                id: index,
+                name: btn.parentElement.querySelector("h2").textContent,
+                price: parseFloat(btn.parentElement.querySelector("p").textContent.replace("R$ ", "")),
+                qty: parseInt(btn.parentElement.querySelector(".qty").textContent)
+            };
+            addToCart(product);
+        });
+    });
+    function addToCart(product) {
+        const existingProduct = cart.find(p => p.id === product.id);
+        if (existingProduct) {
+            existingProduct.qty += product.qty;
+        } else {
+            cart.push(product);
+        }
+        renderCart();
+    }
+    function renderCart() {
+        cartItemsContainer.innerHTML = "";
+        cart.forEach(product => {
+            const item = document.createElement("div");
+            item.classList.add("cart-item");
+            item.innerHTML = `<span>R${product.name} - R$ $ {product.price.toFixed(2)} x ${product.qty}</span>
+            <button class="remove" data-id="$ {product.id}"><i class="fas fa-trash"></i></button>`;
+            item.querySelector(".remove").addEventListener("click", () => {
+                removeFromCart(product.id);
+            });
+            cartItemsContainer.appendChild(item);
+        });
+        updateTotal();
+    }
+    function updateTotal() {
+        let total = cart.reduce((sum, product) => sum + (product.price * product.qty), 0);
+        totalAmountElement.textContent = total.toFixed(2);
+    }
+    function removeFromCart(id) {
+    const index = cart.findIndex(p => p.id === id);
+    if (index > -1) {
+        cart.splice(index, 1);
+    }
+    renderCart();
+    }
+    checkoutBtn.addEventListener("click", () => {
+        if (cart.length === 0) {
+            alert ("Seu carrinho está vazio!");
+        } else {
+            alert(Compra finalizada! Total: R$ $ {total.AmountElement.textContent});
+            cart.length = 0;
+            renderCart();
+            cartModal.style.display = "none";
+        }
+    });
+    document.querySelectorAll(".minus, .plus").forEach(button => {
+        button.addEventListener("click", () => {
+            const qtyElement = button.parentElement.querySelector(".qty");
+            let qty = parseInt(qtyElement.textContent);
+            qty = button.classList.contains("plus") ? qty + 1 : Math.max(1, qty - 1);
+            qtyElement.textContent = qty;
+        });
+    });
+});
