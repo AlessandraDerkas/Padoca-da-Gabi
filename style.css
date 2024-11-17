@@ -13,14 +13,14 @@
 .title {
     font-weight: bold;
     margin: 0;
-    text-align: center;
+    text-align: left;
     font-family: 'Dancing Script';
-    font-size: 36px;
+    font-size: 40px;
 }
 .subtitle {
-    text-align: center;
+    text-align: left;
     font-family: 'Dancing Script';
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic;
     margin: 5px 0 0;
 }
