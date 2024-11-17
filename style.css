@@ -8,7 +8,7 @@
     left: 100%;
     transform: translate(-100%, -100%);
     text-align: center;
-    color: #e52997;
+    color: #4baa22;
 }
 .title {
     font-weight: bold;
@@ -28,7 +28,7 @@ header {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #161013;
+    background-color: #e863a6;
 }
 .slideshow {
     flex: 1;
