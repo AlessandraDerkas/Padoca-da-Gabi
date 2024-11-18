@@ -31,6 +31,7 @@ header {
     background-color: #e863a6;
 }
 .slideshow {
+    flex: 1;
     display: flex;
     overflow: hidden;
     justify-content: center;
@@ -42,6 +43,9 @@ header {
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
+    width: 100%;
+    height: auto;
+    animation: slideshow 10s infinite;
 }
 @keyframes slideshow {
     0% { transform: translateX(0);}
