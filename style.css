@@ -36,7 +36,7 @@ header {
     overflow: hidden;
 }
 .slideshow img {
-    width: 1000%;
+    width: 500%;
     height: auto;
     animation: slideshow 10s infinite;
 }
