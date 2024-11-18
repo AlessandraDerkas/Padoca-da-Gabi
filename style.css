@@ -31,12 +31,12 @@ header {
     background-color: #e863a6;
 }
 .slideshow {
-    flex: 5;
+    flex: 1;
     display: flex;
     overflow: hidden;
 }
 .slideshow img {
-    width: 500%;
+    width: 100%;
     height: auto;
     animation: slideshow 10s infinite;
 }
@@ -151,8 +151,8 @@ body {
   }
   
   .slideshow img {
-    max-width: 100%;
-    margin-bottom: 20px;
+    max-width: 300%;
+    margin-bottom: 100px;
   }
   
   .description {
