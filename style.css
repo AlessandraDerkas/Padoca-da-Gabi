@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 .slideshow {
-    position: absolute;
+    position: relative;
 }
 .overplay {
     position: relative;
@@ -31,12 +31,12 @@ header {
     background-color: #e863a6;
 }
 .slideshow {
-    flex: 1;
+    flex: 5;
     display: flex;
     overflow: hidden;
 }
 .slideshow img {
-    width: 100%;
+    width: 1000%;
     height: auto;
     animation: slideshow 10s infinite;
 }
