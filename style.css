@@ -36,15 +36,13 @@ header {
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 100vh;
     position: relative;
 }
 .slideshow img {
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
-    width: 100%;
-    height: auto;
     animation: slideshow 10s infinite;
 }
 @keyframes slideshow {
