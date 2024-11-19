@@ -34,10 +34,7 @@ header {
     flex: 1;
     display: flex;
     overflow: hidden;
-    justify-content: center;
-    align-items: center;
     height: 50vh;
-    position: relative;
 }
 .slideshow img {
     max-height: 100%;
