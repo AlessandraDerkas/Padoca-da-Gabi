@@ -36,7 +36,7 @@ header {
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
     position: relative;
 }
 .slideshow img {
